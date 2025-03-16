@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .riskCard {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 300px;
+            display: inline-block;
+            position: relative;
+        }
+        .high { background-color: red; color: white; }
+        .medium { background-color: yellow; }
+        .low { background-color: green; color: white; }
+        .resolve-btn {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Risk Management Dashboard</h1>
+
+    <!-- Input Form -->
+    <div>
+        <input type="text" id="riskName" placeholder="Risk Name" required>
+        <select id="riskLevel">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <input type="text" id="department" placeholder="Department" required>
+        <button id="addRiskBtn">Add Risk</button>
+    </div>
+
+    <!-- Risk Dashboard -->
+    <div id="riskDashboard"></div>
+
+    <!-- Bulk Update Button -->
+    <button id="increaseRiskBtn">Increase Risk Levels</button>
+
+    <script src="cc_15.js"></script>
+</body>
+</html>
