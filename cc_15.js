@@ -17,3 +17,19 @@ function addRiskItem(riskName, riskLevel, department) {
     // Create risk card element
     const riskCard = document.createElement("div");
     riskCard.classList.add("riskCard");
+
+// Task 4 - Categorizing Risks by Level
+    if (riskLevel === "High") {
+        riskCard.classList.add("high");
+    } else if (riskLevel === "Medium") {
+        riskCard.classList.add("medium");
+    } else {
+        riskCard.classList.add("low");
+    }
+
+    // Set content inside the card
+    riskCard.innerHTML = `
+        <strong>${riskName}</strong> <br>
+        Level: ${riskLevel} <br>
+        Department: ${department} <br>
+    `;
