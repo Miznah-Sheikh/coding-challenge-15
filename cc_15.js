@@ -77,3 +77,16 @@ increaseRiskBtn.addEventListener("click", function() {
         }
     });
 });
+
+// Task 6 - Handling Event Propagation
+riskDashboard.addEventListener("click", function(event) {
+    if (event.target.classList.contains("riskCard")) {
+        event.stopPropagation();
+    }
+});
+
+// Test Cases
+addRiskItem("Data Breach", "High", "IT");
+addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
