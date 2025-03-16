@@ -33,3 +33,28 @@ function addRiskItem(riskName, riskLevel, department) {
         Level: ${riskLevel} <br>
         Department: ${department} <br>
     `;
+ // Task 3 - Removing Risk Items
+    const resolveBtn = document.createElement("button");
+    resolveBtn.textContent = "Resolve";
+    resolveBtn.classList.add("resolve-btn");
+
+    // Remove risk item when clicked
+    resolveBtn.addEventListener("click", function(event) {
+        event.stopPropagation(); // Task 6 - Event Propagation Fix
+        riskDashboard.removeChild(riskCard);
+    });
+
+    // Append button to risk card
+    riskCard.appendChild(resolveBtn);
+
+    // Append risk card to dashboard
+    riskDashboard.appendChild(riskCard);
+}
+
+// Event listener to add risk
+addRiskBtn.addEventListener("click", function() {
+    addRiskItem(riskNameInput.value, riskLevelInput.value, departmentInput.value);
+    // Clear input fields
+    riskNameInput.value = "";
+    departmentInput.value = "";
+});
