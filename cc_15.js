@@ -58,3 +58,22 @@ addRiskBtn.addEventListener("click", function() {
     riskNameInput.value = "";
     departmentInput.value = "";
 });
+
+// Task 5 - Implementing Bulk Updates
+increaseRiskBtn.addEventListener("click", function() {
+    const allRisks = document.querySelectorAll(".riskCard");
+
+    allRisks.forEach(risk => {
+        let riskText = risk.innerHTML;
+        
+        if (riskText.includes("Low")) {
+            risk.innerHTML = riskText.replace("Low", "Medium");
+            risk.classList.remove("low");
+            risk.classList.add("medium");
+        } else if (riskText.includes("Medium")) {
+            risk.innerHTML = riskText.replace("Medium", "High");
+            risk.classList.remove("medium");
+            risk.classList.add("high");
+        }
+    });
+});
